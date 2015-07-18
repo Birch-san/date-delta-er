@@ -11,4 +11,4 @@ while(someOClock.isBefore(now)) {
 	someOClock.add(1, 'days');
 }
 
-console.log(someOClock.diff(now, 'seconds'));
+console.log(someOClock.diff(now, 'seconds')||moment.duration(1, "day").asSeconds());
