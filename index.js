@@ -7,8 +7,8 @@ var mins = userArgs.shift(userArgs) || 0;
 
 var now = moment();
 var someOClock = moment().hour(hours).minute(mins).startOf('minute');
-while(someOClock.isBefore(now)) {
+while(someOClock.diff(now, 'seconds') < 1) {
 	someOClock.add(1, 'days');
 }
 
-console.log(someOClock.diff(now, 'seconds')||moment.duration(1, "day").asSeconds());
+console.log(someOClock.diff(now, 'seconds'));
